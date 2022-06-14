@@ -6,9 +6,28 @@ augroup END
 
 function GitPull()
     let dir = expand('%:p:h')
-    let cmd = '!git -C '.dir.' status'
+    let cmd = '!git -C '.dir.' pull'
+    let status = system(cmd)
+    let t = stridx(status, "Already up to date.")
+    if t == -1
+        let tt = stridx(status, "There is no tracking information for the current branch.")
+        if tt == -1
+            exe e
+        endif
+    endif
+endfunction
+
+function GitPush()
+    let dir = expand('%:p:h')
+    let cmd = '!git -C '.dir.' pull'
     echom cmd
-    exe cmd
+    let status = system(cmd)
+    let t = stridx(status, "Already up to date.")
+    if t == -1
+        let tt = stridx(status, "There is no tracking information for the current branch.")
+        if tt == -1
+        endif
+    endif
 endfunction
 
 function SetVar()
