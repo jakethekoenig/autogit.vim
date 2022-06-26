@@ -9,7 +9,6 @@ function GitPull()
     let dir = expand('%:p:h')
     let cmd = 'git -C '.dir.' pull'
     let status = system(l:cmd)
-    echom l:status
     let t = stridx(status, "Already up to date.")
     if t == -1
         let tt = stridx(status, "There is no tracking information for the current branch.")
@@ -25,15 +24,12 @@ function GitPush()
 
     let cmd = 'git -C '.dir.' add '.file
     let status = system(l:cmd)
-    echom l:status
 
     let cmd = 'git -C '.dir.' commit -m "AutoGit Push"'
     let status = system(l:cmd)
-    echom l:status
 
     let cmd = 'git -C '.dir.' push'
     let status = system(l:cmd)
-    echom l:status
 
     let t = stridx(status, "Already up to date.")
     if t == -1
@@ -42,8 +38,3 @@ function GitPush()
         endif
     endif
 endfunction
-
-function SetVar()
-    let b:test = 1
-    echom "hi"
-endfunction 
