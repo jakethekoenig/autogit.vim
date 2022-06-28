@@ -9,6 +9,7 @@ function! GitPull()
     let dir = expand('%:p:h')
     let cmd = 'git -C '.dir.' pull'
     let status = system(l:cmd)
+    echom l:status
     let t = stridx(status, "Already up to date.")
     if t == -1
         let tt = stridx(status, "There is no tracking information for the current branch.")
@@ -31,10 +32,5 @@ function! GitPush()
     let cmd = 'git -C '.dir.' push'
     let status = system(l:cmd)
 
-    let t = stridx(status, "Already up to date.")
-    if t == -1
-        let tt = stridx(status, "There is no tracking information for the current branch.")
-        if tt == -1
-        endif
-    endif
+    echom l:status
 endfunction
