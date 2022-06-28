@@ -21,10 +21,10 @@ CONTENTS                                        *AutoGitContents*
 Section 1: Usage                                   *AutoGitUsage*
 
 This plugin changes the behavior of read and write for files that contain
-+ GITAUTOPULL or + GITAUTOPUSH, without a space between the + and word.
-Specifically if a file contains + GITAUTOPULL then this plugin will call git
++ GITPULL or + GITPUSH, without a space between the + and word.
+Specifically if a file contains + GITPULL then this plugin will call git
 pull from that files directory and refresh the file when the file would be
-read. And if the file contains + GITAUTOPUSH the plugin will call git add @%,
+read. And if the file contains + GITPUSH the plugin will call git add @%,
 git commit -m "Autopush", git push from that file's directory.
 
 ====================================================================
