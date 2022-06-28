@@ -25,7 +25,7 @@ This plugin changes the behavior of read and write for files that contain
 Specifically if a file contains + GITPULL then this plugin will call git
 pull from that files directory and refresh the file when the file would be
 read. And if the file contains + GITPUSH the plugin will call git add @%,
-git commit -m "Autopush", git push from that file's directory.
+git commit -m "AutoGit Push", git push from that file's directory.
 
 ====================================================================
 Section 2: Mappings                             *AutoGitMappings*
