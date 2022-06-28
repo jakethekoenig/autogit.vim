@@ -5,7 +5,7 @@ augroup autogit
 augroup END
 
 
-function GitPull()
+function! GitPull()
     let dir = expand('%:p:h')
     let cmd = 'git -C '.dir.' pull'
     let status = system(l:cmd)
@@ -18,7 +18,7 @@ function GitPull()
     endif
 endfunction
 
-function GitPush()
+function! GitPush()
     let dir = expand('%:p:h')
     let file = expand('%:p')
 
